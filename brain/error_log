@@ -1,0 +1,7 @@
+[04-Sep-2014 10:55:56 UTC] PHP Fatal error:  Uncaught exception 'Braintree_Exception_Authentication' in /home2/gibbsjm/public_html/laurelpetersongregory/wp-content/plugins/brain_tree/brain/brain_tree/lib/Braintree/Util.php:53
+Stack trace:
+#0 /home2/gibbsjm/public_html/laurelpetersongregory/wp-content/plugins/brain_tree/brain/brain_tree/lib/Braintree/Http.php(37): Braintree_Util::throwStatusCodeException(401)
+#1 /home2/gibbsjm/public_html/laurelpetersongregory/wp-content/plugins/brain_tree/brain/brain_tree/lib/Braintree/Transaction.php(702): Braintree_Http::post('/transactions', Array)
+#2 /home2/gibbsjm/public_html/laurelpetersongregory/wp-content/plugins/brain_tree/brain/brain_tree/lib/Braintree/Transaction.php(223): Braintree_Transaction::_doCreate('/transactions', Array)
+#3 /home2/gibbsjm/public_html/laurelpetersongregory/wp-content/plugins/brain_tree/brain/brain_tree/lib/Braintree/Transaction.php(388): Braintree_Transaction::create(Array)
+#4 /home2/gibbsjm/public_html/laurelpetersongregory/wp-content/plugins/brain_tree/brain/transaction.php(37): Brai in /home2/gibbsjm/public_html/laurelpetersongregory/wp-content/plugins/brain_tree/brain/brain_tree/lib/Braintree/Util.php on line 53

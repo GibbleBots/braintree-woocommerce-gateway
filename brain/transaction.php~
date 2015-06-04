@@ -1,0 +1,33 @@
+<?php 
+print_r($_POST);
+
+
+require_once 'brain_tree/lib/Braintree.php';
+
+
+Braintree_Configuration::environment('sandbox');
+Braintree_Configuration::merchantId('2khgt8xv8t8hr995');
+Braintree_Configuration::publicKey('t94bh9hh28wcgm9j');
+Braintree_Configuration::privateKey('ffbfaff1b8c7e4a6671db06ae2e7ff19');
+$result = Braintree_Customer::create(array(
+    "firstName" => $_POST["first_name"],
+    "lastName" => $_POST["last_name"],
+    "creditCard" => array(
+        "number" => 4111111111111111,
+        "expirationMonth" => 11,
+        "expirationYear" => 2015,
+        "cvv" => 111,
+        "billingAddress" => array(
+            "postalCode" => 624878
+        )
+    )
+));
+
+if ($result->success) {
+    echo("Success! Customer ID: " . $result->customer->id);
+} else {
+    echo("Validation errors:<br/>");
+    foreach (($result->errors->deepAll()) as $error) {
+        echo("- " . $error->message . "<br/>");
+    }
+}
